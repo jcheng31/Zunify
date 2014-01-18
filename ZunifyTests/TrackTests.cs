@@ -50,5 +50,13 @@ namespace ZunifyTests
 
             Assert.AreEqual("Florence + the Machine", t.Artist, "Track artist not set correctly.");
         }
+
+        [TestMethod]
+        public void TrackAlbumArtistSetCorrectly()
+        {
+            Track t = Track.FromXElementFactory(element);
+
+            Assert.AreEqual("Florence + the Machine", t.AlbumArtist, "Track album artist not set correctly.");
+        }
     }
 }
