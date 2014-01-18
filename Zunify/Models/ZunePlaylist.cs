@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 using System.Xml;
 using System.Xml.Linq;
 
@@ -44,6 +45,17 @@ namespace Zunify.Models
             }
 
             return p;
+        }
+
+        public String ToListingByArtistAndTrack()
+        {
+            StringBuilder builder = new StringBuilder();
+            foreach (var track in Tracks)
+            {
+                builder.AppendLine(track.ToString());
+            }
+
+            return builder.ToString();
         }
     }
 }
