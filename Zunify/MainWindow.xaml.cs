@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Win32;
+using Zunify.Models;
 
 namespace Zunify
 {
@@ -41,6 +42,16 @@ namespace Zunify
                 playlistPath = dialog.FileName;
                 SelectedPlaylistLabel.Content = playlistPath;
             }
+        }
+
+        private void ParseAndSaveClick(object sender, RoutedEventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(playlistPath))
+            {
+                return;
+            }
+
+            ZunePlaylist playlist = ZunePlaylist.FromFileFactory(playlistPath);
         }
     }
 }

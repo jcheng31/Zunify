@@ -24,7 +24,7 @@
         <Button Grid.Row="1" Grid.Column="0" Click="ChoosePlaylistClick" Margin="12">
             <Label Content="Choose Playlist" />
         </Button>
-        <Button Grid.Row="1" Grid.Column="1" Margin="12">
+        <Button Grid.Row="1" Grid.Column="1" Click="ParseAndSaveClick" Margin="12">
             <Label Content="Parse and Save" />
         </Button>
     </Grid>

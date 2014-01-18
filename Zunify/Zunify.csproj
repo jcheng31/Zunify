@@ -67,7 +67,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="Models\Track.cs" />
     <Compile Include="Models\ZunePlaylist.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
