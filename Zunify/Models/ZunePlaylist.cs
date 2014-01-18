@@ -9,12 +9,14 @@ namespace Zunify.Models
 {
     public class ZunePlaylist
     {
-        public static void FromFileFactory(String filePath)
+        public static ZunePlaylist FromFileFactory(String filePath)
         {
             if (String.IsNullOrEmpty(filePath) || !File.Exists(filePath))
             {
                 throw new ArgumentException();
             }
+
+            return null;
         }
     }
 }

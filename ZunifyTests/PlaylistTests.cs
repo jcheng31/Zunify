@@ -30,5 +30,11 @@ namespace ZunifyTests
         {
             ZunePlaylist.FromFileFactory("this is clearly invalid.");
         }
+
+        [TestMethod]
+        public void CreatesPlaylistFromValidPath()
+        {
+            Assert.IsNotNull(ZunePlaylist.FromFileFactory("Simple.zpl"), "Proper path didn't return playlist object.");
+        }
     }
 }
