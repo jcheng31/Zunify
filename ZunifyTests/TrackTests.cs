@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml.Linq;
 using Zunify.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -16,6 +17,15 @@ namespace ZunifyTests
         public void NullThrowsException()
         {
             Track.FromXElementFactory(null);
+        }
+
+        [TestMethod]
+        public void TrackTitleSetCorrectly()
+        {
+            XElement element = XElement.Parse(SampleTrackXml);
+            Track t = Track.FromXElementFactory(element);
+
+            Assert.AreEqual("No Light, No Light", t.Title, "Track title not set correctly.");
         }
     }
 }
