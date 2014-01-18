@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,15 +34,18 @@ namespace Zunify
         {
             OpenFileDialog dialog = new OpenFileDialog
             {
+                Title = "Select Playlist",
                 Filter = "Zune Playlist File (*.zpl)|*.zpl"
             };
 
             bool? result = dialog.ShowDialog();
-            if (result == true)
+            if (result != true)
             {
-                playlistPath = dialog.FileName;
-                SelectedPlaylistLabel.Content = playlistPath;
+                return;
             }
+
+            playlistPath = dialog.FileName;
+            SelectedPlaylistLabel.Content = playlistPath;
         }
 
         private void ParseAndSaveClick(object sender, RoutedEventArgs e)
@@ -52,6 +56,26 @@ namespace Zunify
             }
 
             ZunePlaylist playlist = ZunePlaylist.FromFileFactory(playlistPath);
+
+            SaveFileDialog dialog = new SaveFileDialog
+            {
+                Title = "Save Output",
+                Filter = "Text File (*.txt)|*.txt"
+            };
+
+            bool? result = dialog.ShowDialog();
+            if (result != true)
+            {
+                return;
+            }
+
+            String outputPath = dialog.FileName;
+            using (FileStream s = File.Create(outputPath))
+            using (StreamWriter writer = new StreamWriter(s))
+            {
+                writer.Write(playlist.ToListingByArtistAndTrack());
+            }
+
         }
     }
 }
