@@ -20,6 +20,7 @@ namespace Zunify.Models
             }
 
             ZunePlaylist p = new ZunePlaylist();
+            p.Tracks = new List<Track>();
 
             try
             {
