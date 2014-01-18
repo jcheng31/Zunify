@@ -30,7 +30,7 @@
         <Member type="Property">public int Artist { get; set; }</Member>
         <Member type="Property">public int Duration { get; set; }</Member>
         <Member type="Property">public String Path { get; set; }</Member>
-        <Member type="Method">public static Track FromXmlStringFactory(String xmlString)</Member>
+        <Member type="Method">public static Track FromXElementFactory(XElement element)</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
