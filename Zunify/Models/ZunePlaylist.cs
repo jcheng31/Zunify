@@ -29,6 +29,14 @@ namespace Zunify.Models
                 XElement head = mainDocument.Element("head");
                 
                 p.Name = (string)head.Element("title");
+
+                XElement body = mainDocument.Element("body");
+                XElement trackList = body.Element("seq");
+
+                foreach (XElement trackElement in trackList.Elements())
+                {
+                    p.Tracks.Add(Track.FromXElementFactory(trackElement));
+                }
             }
             catch (XmlException)
             {
