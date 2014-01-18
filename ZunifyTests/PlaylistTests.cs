@@ -14,5 +14,14 @@ namespace ZunifyTests
         {
             ZunePlaylist.FromFileFactory(null);
         }
+
+        [TestMethod]
+        [ExpectedException(typeof (ArgumentException),
+            "Empty path didn't throw an exception.")]
+        public void ExceptionOnEmptyPath()
+        {
+            ZunePlaylist.FromFileFactory(String.Empty);
+        }
+
     }
 }

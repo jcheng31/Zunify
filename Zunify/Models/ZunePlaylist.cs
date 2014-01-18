@@ -10,7 +10,10 @@ namespace Zunify.Models
     {
         public static void FromFileFactory(String filePath)
         {
-            throw new ArgumentException();
+            if (String.IsNullOrEmpty(filePath))
+            {
+                throw new ArgumentException();
+            }
         }
     }
 }
