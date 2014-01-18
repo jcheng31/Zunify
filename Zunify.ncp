@@ -1,0 +1,70 @@
+<Project>
+  <Name>Zunify</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Initial Design</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>ZunePlaylist</Name>
+        <Access>Public</Access>
+        <Location left="937" top="275" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">private ZunePlaylist()</Member>
+        <Member type="Method">public static ZunePlaylist FromFileFactory(String filePath)</Member>
+        <Member type="Property">public List&lt;Track&gt; Tracks { get; set; }</Member>
+        <Member type="Property">public String Name { get; set; }</Member>
+        <Member type="Method">public static ZunePlaylist FromXmlStringFactory(String xmlString)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Track</Name>
+        <Access>Public</Access>
+        <Location left="1354" top="275" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public Track()</Member>
+        <Member type="Property">public String Title { get; set; }</Member>
+        <Member type="Property">public String AlbumTitle { get; set; }</Member>
+        <Member type="Property">public String AlbumArtist { get; set; }</Member>
+        <Member type="Property">public int Artist { get; set; }</Member>
+        <Member type="Property">public int Duration { get; set; }</Member>
+        <Member type="Property">public String Path { get; set; }</Member>
+        <Member type="Method">public static Track FromXmlStringFactory(String xmlString)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>PlaylistConverter</Name>
+        <Access>Public</Access>
+        <Location left="937" top="649" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">ZunePlaylist playlist</Member>
+        <Member type="Method">public static void ToTextFile(String filePath)</Member>
+        <Member type="Constructor">public PlaylistConverter()</Member>
+        <Member type="Method">public void ToM3U(String filePath)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Association" first="0" second="1">
+        <Label>contains</Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+        <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>*</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="2" second="0">
+        <Label>has</Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartMultiplicity>1</StartMultiplicity>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>
