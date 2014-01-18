@@ -31,5 +31,12 @@ namespace ZunifyTests
         {
             Assert.IsNotNull(Track.FromXmlStringFactory(SampleTrackXml), "Proper XML failed to create a Track.");
         }
+
+        [TestMethod]
+        public void TitleProperlySet()
+        {
+            Track t = Track.FromXmlStringFactory(SampleTrackXml);
+            Assert.AreEqual("No Light, No Light", t.Title);
+        }
     }
 }
