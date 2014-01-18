@@ -7,8 +7,8 @@ namespace ZunifyTests
     [TestClass]
     public class PlaylistTests
     {
-        private const string EmptyPlaylistPath = "Empty.zpl";
-        private const string SimplePlaylistPath = "Simple.zpl";
+        private const string EmptyPlaylistPath = @"Sample Playlists\Empty.zpl";
+        private const string SimplePlaylistPath = @"Sample Playlists\Simple.zpl";
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException),

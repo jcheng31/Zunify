@@ -63,10 +63,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Empty.zpl">
+    <None Include="Sample Playlists\Empty.zpl">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Simple.zpl">
+    <None Include="Sample Playlists\Simple.zpl">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
