@@ -1,7 +1,7 @@
 ﻿<Window x:Class="Zunify.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Zunify" Height="150" Width="350" ResizeMode="NoResize">
+        Title="Zunify" Height="150" Width="500" ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition />
@@ -13,11 +13,15 @@
         </Grid.ColumnDefinitions>
         
         <Grid Grid.Row="0" Grid.ColumnSpan="2">
-            <Grid.ColumnDefinitions></Grid.ColumnDefinitions>
-            <Label Content="Selected File" HorizontalAlignment="Center"  VerticalAlignment="Center" />
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Selected Playlist:" HorizontalAlignment="Center"  VerticalAlignment="Center" />
+            <Label Grid.Column="1" Name="SelectedPlaylistLabel" VerticalAlignment="Center" />
         </Grid>
         
-        <Button Grid.Row="1" Click="ChoosePlaylistClick" Margin="12">
+        <Button Grid.Row="1" Grid.Column="0" Click="ChoosePlaylistClick" Margin="12">
             <Label Content="Choose Playlist" />
         </Button>
         <Button Grid.Row="1" Grid.Column="1" Margin="12">

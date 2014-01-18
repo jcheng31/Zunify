@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Win32;
 
 namespace Zunify
 {
@@ -20,6 +21,8 @@ namespace Zunify
     /// </summary>
     public partial class MainWindow : Window
     {
+        private String playlistPath;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -27,7 +30,17 @@ namespace Zunify
 
         private void ChoosePlaylistClick(object sender, RoutedEventArgs e)
         {
-            
+            OpenFileDialog dialog = new OpenFileDialog
+            {
+                Filter = "Zune Playlist File (*.zpl)|*.zpl"
+            };
+
+            bool? result = dialog.ShowDialog();
+            if (result == true)
+            {
+                playlistPath = dialog.FileName;
+                SelectedPlaylistLabel.Content = playlistPath;
+            }
         }
     }
 }
