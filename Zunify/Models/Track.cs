@@ -10,6 +10,7 @@ namespace Zunify.Models
         public string Artist { get; set; }
         public string AlbumArtist { get; set; }
         public int Duration { get; set; }
+        public string Path { get; set; }
 
         public static Track FromXElementFactory(XElement element)
         {
@@ -24,7 +25,8 @@ namespace Zunify.Models
                 AlbumTitle =  (string) element.Attribute("albumTitle"),
                 Artist = (string) element.Attribute("trackArtist"),
                 AlbumArtist = (string) element.Attribute("albumArtist"),
-                Duration = (int) element.Attribute("duration")
+                Duration = (int) element.Attribute("duration"),
+                Path = (string) element.Attribute("src")
             };
 
             return t;
