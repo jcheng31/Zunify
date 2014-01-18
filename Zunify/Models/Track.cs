@@ -14,7 +14,12 @@ namespace Zunify.Models
     {
         public static Track FromXElementFactory(XElement element)
         {
-            throw new NotImplementedException();
+            if (element == null)
+            {
+                throw new ArgumentException("Received Null in factory method.");
+            }
+
+            return null;
         }
 
         [XmlAttribute("trackTitle")]
