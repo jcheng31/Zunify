@@ -39,5 +39,25 @@ namespace ZunifyTests
         {
             Assert.IsNotNull(ZunePlaylist.FromFileFactory(SimplePlaylistPath), "Proper path didn't return playlist object.");
         }
+
+        [TestMethod]
+        public void CreatesEmptyPlaylistFromFile()
+        {
+            ZunePlaylist playlist = ZunePlaylist.FromFileFactory(EmptyPlaylistPath);
+
+            Assert.IsNotNull(playlist, "Empty playlist was null.");
+            Assert.AreEqual(0, playlist.Count, "Empty playlist didn't have 0 items.");
+            Assert.AreEqual("Empty", playlist.Name, "Empty playlist didn't have the correct name.");
+        }
+
+        [TestMethod]
+        public void CreatesSimplePlaylistFromFile()
+        {
+            ZunePlaylist playlist = ZunePlaylist.FromFileFactory(SimplePlaylistPath);
+
+            Assert.IsNotNull(playlist, "Simple playlist was null.");
+            Assert.AreEqual(1, playlist.Count, "Simple playlist had incorrect count.");
+            Assert.AreEqual("Simple", playlist.Name, "Simple playlist didn't have the correct name.");
+        }
     }
 }
