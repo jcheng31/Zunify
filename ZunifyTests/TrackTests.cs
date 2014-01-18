@@ -66,5 +66,13 @@ namespace ZunifyTests
 
             Assert.AreEqual(274837, t.Duration, "Track duration not set correctly.");
         }
+
+        [TestMethod]
+        public void TrackPathSetCorrectly()
+        {
+            Track t = Track.FromXElementFactory(element);
+
+            Assert.AreEqual(@"D:\Users\Jerome\My Music\Florence + the Machine\Ceremonials (Deluxe Edition)\07 No Light, No Light.mp3", t.Path, "Track path not set correctly.");
+        }
     }
 }
