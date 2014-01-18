@@ -16,7 +16,7 @@ namespace Zunify.Models
                 throw new ArgumentException();
             }
 
-            return null;
+            return new ZunePlaylist();
         }
     }
 }
