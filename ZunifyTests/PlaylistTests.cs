@@ -7,6 +7,7 @@ namespace ZunifyTests
     [TestClass]
     public class PlaylistTests
     {
+        private const string EmptyPlaylistPath = "Empty.zpl";
         private const string SimplePlaylistPath = "Simple.zpl";
 
         [TestMethod]
