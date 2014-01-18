@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="TrackTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PlaylistTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Zunify\Zunify.csproj">
