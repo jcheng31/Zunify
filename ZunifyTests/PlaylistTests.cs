@@ -7,6 +7,8 @@ namespace ZunifyTests
     [TestClass]
     public class PlaylistTests
     {
+        private const string SimplePlaylistPath = "Simple.zpl";
+
         [TestMethod]
         [ExpectedException(typeof(ArgumentException),
             "Null path didn't throw an exception.")]
@@ -34,7 +36,7 @@ namespace ZunifyTests
         [TestMethod]
         public void CreatesPlaylistFromValidPath()
         {
-            Assert.IsNotNull(ZunePlaylist.FromFileFactory("Simple.zpl"), "Proper path didn't return playlist object.");
+            Assert.IsNotNull(ZunePlaylist.FromFileFactory(SimplePlaylistPath), "Proper path didn't return playlist object.");
         }
     }
 }
