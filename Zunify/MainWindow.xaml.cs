@@ -24,5 +24,10 @@ namespace Zunify
         {
             InitializeComponent();
         }
+
+        private void ChoosePlaylistClick(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }
