@@ -23,5 +23,12 @@ namespace ZunifyTests
             ZunePlaylist.FromFileFactory(String.Empty);
         }
 
+        [TestMethod]
+        [ExpectedException(typeof (ArgumentException),
+            "Invalid path didn't throw an exception.")]
+        public void ExceptionOnInvalidPath()
+        {
+            ZunePlaylist.FromFileFactory("this is clearly invalid.");
+        }
     }
 }
