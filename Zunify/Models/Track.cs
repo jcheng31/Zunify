@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using System.Xml.Linq;
 
 namespace Zunify.Models
@@ -39,19 +40,39 @@ namespace Zunify.Models
 
         public string ToFormattedString(string format)
         {
-            switch (format)
+            if (String.IsNullOrWhiteSpace(format))
             {
-                case "$Title":
-                    return Title;
-                case "$Artist":
-                    return Artist;
-                case "$AlbumTitle":
-                    return AlbumTitle;
-                case "$AlbumArtist":
-                    return AlbumArtist;
-                default:
-                    return String.Empty;
+                return String.Empty;
             }
+
+            StringBuilder formatBuilder = new StringBuilder();
+
+            string[] formatTokens = format.Split(' ');
+            foreach (string token in formatTokens)
+            {
+                switch (token)
+                {
+                    case "$Title":
+                        formatBuilder.Append(Title);
+                        break;
+                    case "$Artist":
+                        formatBuilder.Append(Artist);
+                        break;
+                    case "$AlbumTitle":
+                        formatBuilder.Append(AlbumTitle);
+                        break;
+                    case "$AlbumArtist":
+                        formatBuilder.Append(AlbumArtist);
+                        break;
+                    default:
+                        formatBuilder.Append(token);
+                        break;
+                }
+
+                formatBuilder.Append(' ');
+            }
+
+            return formatBuilder.ToString().Trim();
         }
     }
 }
