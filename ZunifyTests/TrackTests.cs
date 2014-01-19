@@ -70,5 +70,11 @@ namespace ZunifyTests
         {
             Assert.AreEqual(String.Empty, testTrack.ToFormattedString(String.Empty));
         }
+
+        [TestMethod]
+        public void TrackNullFormatString()
+        {
+            Assert.AreEqual(String.Empty, testTrack.ToFormattedString(null));
+        }
     }
 }
