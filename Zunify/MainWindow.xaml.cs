@@ -70,10 +70,11 @@ namespace Zunify
             }
 
             String outputPath = dialog.FileName;
+            String formatString = OutputFormatString.Text;
             using (FileStream s = File.Create(outputPath))
             using (StreamWriter writer = new StreamWriter(s))
             {
-                writer.Write(playlist.ToListingByArtistAndTrack());
+                writer.Write(playlist.ToListingWithFormat(formatString));
             }
 
         }

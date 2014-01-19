@@ -57,5 +57,16 @@ namespace Zunify.Models
 
             return builder.ToString();
         }
+
+        public String ToListingWithFormat(String format)
+        {
+            StringBuilder builder = new StringBuilder();
+            foreach (var track in Tracks)
+            {
+                builder.AppendLine(track.ToFormattedString(format));
+            }
+
+            return builder.ToString();
+        }
     }
 }
