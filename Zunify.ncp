@@ -16,6 +16,7 @@
         <Member type="Property">public String Name { get; set; }</Member>
         <Member type="Method">public static ZunePlaylist FromXmlStringFactory(String xmlString)</Member>
         <Member type="Property">public int Count { get; set; }</Member>
+        <Member type="Method">public String ToListingWithFormat(String format)</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
