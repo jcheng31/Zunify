@@ -65,7 +65,10 @@ namespace ZunifyTests
             Assert.AreEqual(@"D:\Users\Jerome\My Music\Florence + the Machine\Ceremonials (Deluxe Edition)\07 No Light, No Light.mp3", testTrack.Path, "Track path not set correctly.");
         }
 
-            
+        [TestMethod]
+        public void TrackEmptyFormatString()
+        {
+            Assert.AreEqual(String.Empty, testTrack.ToFormattedString(String.Empty));
         }
     }
 }
