@@ -39,12 +39,15 @@ namespace Zunify.Models
 
         public string ToFormattedString(string format)
         {
-            if (String.IsNullOrWhiteSpace(format))
+            switch (format)
             {
-                return String.Empty;
+                case "$Title":
+                    return Title;
+                case "$Artist":
+                    return Artist;
+                default:
+                    return String.Empty;
             }
-
-            return Artist;
         }
     }
 }
