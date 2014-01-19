@@ -110,5 +110,11 @@ namespace ZunifyTests
         {
             Assert.AreEqual(TrackTitle + " " + Artist, testTrack.ToFormattedString("$Title $Artist"));
         }
+
+        [TestMethod]
+        public void TrackFormatStringWithOtherCharacters()
+        {
+            Assert.AreEqual(TrackTitle + " - " + AlbumTitle + " ; " + Artist, testTrack.ToFormattedString("$Title - $AlbumTitle ; $Artist"));
+        }
     }
 }
