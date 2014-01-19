@@ -39,7 +39,12 @@ namespace Zunify.Models
 
         public string ToFormattedString(string format)
         {
-            return String.Empty;
+            if (String.IsNullOrWhiteSpace(format))
+            {
+                return String.Empty;
+            }
+
+            return Artist;
         }
     }
 }
