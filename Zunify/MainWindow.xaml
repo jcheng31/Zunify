@@ -4,8 +4,8 @@
         Title="Zunify" Height="200" Width="500" ResizeMode="NoResize">
     <Grid>
         <Grid.Resources>
-            <Style TargetType="Control" x:Key="CenterAlign">
-                <Setter Property="HorizontalAlignment" Value="Center" />
+            <Style TargetType="Control" x:Key="MainFieldLabels">
+                <Setter Property="HorizontalAlignment" Value="Right" />
                 <Setter Property="VerticalAlignment" Value="Center" />
             </Style>
         </Grid.Resources>
@@ -28,10 +28,10 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
-            <Label Content="Selected Playlist:" Style="{StaticResource CenterAlign}"/>
-            <Label Grid.Row="0" Grid.Column="1" Name="SelectedPlaylistLabel" VerticalAlignment="Center" />
+            <Label Content="Selected Playlist:" Style="{StaticResource MainFieldLabels}"/>
+            <Label Grid.Row="0" Grid.Column="1" Name="SelectedPlaylistLabel" VerticalAlignment="Center" Margin="12" />
 
-            <Label Grid.Row="1" Grid.Column="0" Content="Track Output Format:" Style="{StaticResource CenterAlign}" />
+            <Label Grid.Row="1" Grid.Column="0" Content="Track Output Format:" Style="{StaticResource MainFieldLabels}" />
             <TextBox Grid.Row="1" Grid.Column="1" Name="OutputFormatString" VerticalAlignment="Center" Margin="12" Padding="3" />
         </Grid>
 
