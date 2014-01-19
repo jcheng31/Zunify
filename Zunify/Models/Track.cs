@@ -33,10 +33,6 @@ namespace Zunify.Models
             return t;
         }
 
-        public override string ToString()
-        {
-            return Artist + " - " + Title;
-        }
 
         public string ToFormattedString(string format)
         {

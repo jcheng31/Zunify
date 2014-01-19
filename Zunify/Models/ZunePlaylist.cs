@@ -52,7 +52,7 @@ namespace Zunify.Models
             StringBuilder builder = new StringBuilder();
             foreach (var track in Tracks)
             {
-                builder.AppendLine(track.ToString());
+                builder.AppendLine(track.ToFormattedString("$Artist - $Title"));
             }
 
             return builder.ToString();
