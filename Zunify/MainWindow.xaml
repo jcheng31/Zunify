@@ -3,6 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Zunify" Height="200" Width="500" ResizeMode="NoResize">
     <Grid>
+        <Grid.Resources>
+            <Style TargetType="Control" x:Key="CenterAlign">
+                <Setter Property="HorizontalAlignment" Value="Center" />
+                <Setter Property="VerticalAlignment" Value="Center" />
+            </Style>
+        </Grid.Resources>
+
         <Grid.RowDefinitions>
             <RowDefinition Height="2*" />
             <RowDefinition Height="*" />
@@ -11,7 +18,7 @@
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        
+
         <Grid Grid.Row="0" Grid.ColumnSpan="2">
             <Grid.RowDefinitions>
                 <RowDefinition />
@@ -21,13 +28,13 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
-            <Label Content="Selected Playlist:" HorizontalAlignment="Center"  VerticalAlignment="Center" />
+            <Label Content="Selected Playlist:" Style="{StaticResource CenterAlign}"/>
             <Label Grid.Row="0" Grid.Column="1" Name="SelectedPlaylistLabel" VerticalAlignment="Center" />
-            
-            <Label Grid.Row="1" Grid.Column="0" Content="Track Output Format:" VerticalAlignment="Center" HorizontalAlignment="Center" />
+
+            <Label Grid.Row="1" Grid.Column="0" Content="Track Output Format:" Style="{StaticResource CenterAlign}" />
             <TextBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="12" Padding="3" />
         </Grid>
-        
+
         <Button Grid.Row="1" Grid.Column="0" Click="ChoosePlaylistClick" Margin="12">
             <Label Content="Choose Playlist" />
         </Button>
