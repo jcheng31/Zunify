@@ -36,5 +36,10 @@ namespace Zunify.Models
         {
             return Artist + " - " + Title;
         }
+
+        public string ToFormattedString(string format)
+        {
+            return String.Empty;
+        }
     }
 }
