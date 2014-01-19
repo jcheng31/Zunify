@@ -93,6 +93,10 @@ namespace ZunifyTests
             Assert.AreEqual(TrackTitle, testTrack.ToFormattedString("$Title"));
         }
 
+        [TestMethod]
+        public void TrackAlbumTitleFormatString()
+        {
+            Assert.AreEqual(AlbumTitle, testTrack.ToFormattedString("$AlbumTitle"));
         }
     }
 }
