@@ -11,6 +11,10 @@ namespace ZunifyTests
         private const String SampleTrackXml =
             @"<media src=""D:\Users\Jerome\My Music\Florence + the Machine\Ceremonials (Deluxe Edition)\07 No Light, No Light.mp3"" serviceId=""{6FA7FA06-0100-11DB-89CA-0019B92A3933}"" albumTitle=""Ceremonials (Deluxe Edition)"" albumArtist=""Florence + the Machine"" trackTitle=""No Light, No Light"" trackArtist=""Florence + the Machine"" duration=""274837"" />";
 
+        private const string Artist = "Florence + the Machine";
+        private const string TrackTitle = "No Light, No Light";
+        private const string AlbumTitle = "Ceremonials (Deluxe Edition)";
+
         private XElement element;
         private Track testTrack;
 
@@ -32,25 +36,25 @@ namespace ZunifyTests
         [TestMethod]
         public void TrackTitleSetCorrectly()
         {
-            Assert.AreEqual("No Light, No Light", testTrack.Title, "Track title not set correctly.");
+            Assert.AreEqual(TrackTitle, testTrack.Title, "Track title not set correctly.");
         }
 
         [TestMethod]
         public void TrackAlbumSetCorrectly()
         {
-            Assert.AreEqual("Ceremonials (Deluxe Edition)", testTrack.AlbumTitle, "Track album not set correctly.");
+            Assert.AreEqual(AlbumTitle, testTrack.AlbumTitle, "Track album not set correctly.");
         }
 
         [TestMethod]
         public void TrackArtistSetCorrectly()
         {
-            Assert.AreEqual("Florence + the Machine", testTrack.Artist, "Track artist not set correctly.");
+            Assert.AreEqual(Artist, testTrack.Artist, "Track artist not set correctly.");
         }
 
         [TestMethod]
         public void TrackAlbumArtistSetCorrectly()
         {
-            Assert.AreEqual("Florence + the Machine", testTrack.AlbumArtist, "Track album artist not set correctly.");
+            Assert.AreEqual(Artist, testTrack.AlbumArtist, "Track album artist not set correctly.");
         }
 
         [TestMethod]
@@ -80,13 +84,15 @@ namespace ZunifyTests
         [TestMethod]
         public void TrackArtistFormatString()
         {
-            Assert.AreEqual("Florence + the Machine", testTrack.ToFormattedString("$Artist"));
+            Assert.AreEqual(Artist, testTrack.ToFormattedString("$Artist"));
         }
 
         [TestMethod]
         public void TrackTitleFormatString()
         {
-            Assert.AreEqual("No Light, No Light", testTrack.ToFormattedString("$Title"));
+            Assert.AreEqual(TrackTitle, testTrack.ToFormattedString("$Title"));
+        }
+
         }
     }
 }
