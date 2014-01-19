@@ -45,6 +45,8 @@ namespace Zunify.Models
                     return Title;
                 case "$Artist":
                     return Artist;
+                case "$AlbumTitle":
+                    return AlbumTitle;
                 default:
                     return String.Empty;
             }
