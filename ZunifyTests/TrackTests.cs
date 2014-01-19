@@ -82,5 +82,11 @@ namespace ZunifyTests
         {
             Assert.AreEqual("Florence + the Machine", testTrack.ToFormattedString("$Artist"));
         }
+
+        [TestMethod]
+        public void TrackTitleFormatString()
+        {
+            Assert.AreEqual("No Light, No Light", testTrack.ToFormattedString("$Title"));
+        }
     }
 }
