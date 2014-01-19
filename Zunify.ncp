@@ -22,7 +22,7 @@
         <Name>Track</Name>
         <Access>Public</Access>
         <Location left="1354" top="275" />
-        <Size width="162" height="216" />
+        <Size width="162" height="230" />
         <Collapsed>False</Collapsed>
         <Member type="Constructor">public Track()</Member>
         <Member type="Property">public String Title { get; set; }</Member>
@@ -32,6 +32,7 @@
         <Member type="Property">public int Duration { get; set; }</Member>
         <Member type="Property">public String Path { get; set; }</Member>
         <Member type="Method">public static Track FromXElementFactory(XElement element)</Member>
+        <Member type="Method">public String ToFormattedString(String format)</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
