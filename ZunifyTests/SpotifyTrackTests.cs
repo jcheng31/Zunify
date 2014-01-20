@@ -68,5 +68,11 @@ namespace ZunifyTests
         {
             Assert.AreEqual(228, testTrack.Duration);
         }
+
+        [TestMethod]
+        public void SpotifyTrackIdentifierParse()
+        {
+            Assert.AreEqual("spotify:track:2aYaiTHCFd3eZkP1fseOx9", testTrack.Identifier);
+        }
     }
 }
