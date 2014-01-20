@@ -16,7 +16,8 @@ namespace Zunify.Models
                 Title = (string) json["name"],
                 AlbumTitle = (string)json["album"]["name"],
                 Artist = (string) json["artists"].First()["name"],
-                Duration = (int) json["length"]
+                Duration = (int) json["length"],
+                Identifier = (string) json["href"]
             };
 
             return t;
