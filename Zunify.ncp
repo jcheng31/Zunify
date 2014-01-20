@@ -81,7 +81,7 @@
         <Location left="689" top="1152" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
-        <Member type="Method">List&lt;Track&gt; FindTrackDetails(String title, String artist, String album)</Member>
+        <Member type="Method">List&lt;Track&gt; FindTracks(String title, String artist, String album)</Member>
       </Entity>
     </Entities>
     <Relationships>
