@@ -1,5 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Newtonsoft.Json.Linq;
+using Zunify.Models;
 
 namespace ZunifyTests
 {
@@ -34,9 +36,19 @@ namespace ZunifyTests
           ""track-number"": ""1""
         }";
 
-        [TestMethod]
-        public void TestMethod1()
+        private SpotifyTrack testTrack;
+
+        [TestInitialize]
+        public void Setup()
         {
+            JObject data = JObject.Parse(SampleTrackJson);
+            testTrack = SpotifyTrack.FromJsonFactory(data);
+        }
+
+        [TestMethod]
+        public void SpotifyTrackNameParse()
+        {
+            Assert.AreEqual("Iamundernodisguise", testTrack.Title);
         }
     }
 }
