@@ -62,5 +62,11 @@ namespace ZunifyTests
         {
             Assert.AreEqual("School Of Seven Bells", testTrack.Artist);
         }
+
+        [TestMethod]
+        public void SpotifyTrackDurationParse()
+        {
+            Assert.AreEqual(228, testTrack.Duration);
+        }
     }
 }
