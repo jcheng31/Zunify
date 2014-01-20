@@ -56,5 +56,11 @@ namespace ZunifyTests
         {
             Assert.AreEqual("Alpinisms", testTrack.AlbumTitle);
         }
+
+        [TestMethod]
+        public void SpotifyTrackArtistNameParse()
+        {
+            Assert.AreEqual("School Of Seven Bells", testTrack.Artist);
+        }
     }
 }
