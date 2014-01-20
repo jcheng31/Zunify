@@ -67,6 +67,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\PlaylistConverter.cs" />
     <Compile Include="Models\Track.cs" />
     <Compile Include="Models\ZunePlaylist.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
