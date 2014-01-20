@@ -14,7 +14,8 @@ namespace Zunify.Models
             SpotifyTrack t = new SpotifyTrack
             {
                 Title = (string) json["name"],
-                AlbumTitle = (string)json["album"]["name"]
+                AlbumTitle = (string)json["album"]["name"],
+                Artist = (string) json["artists"].First()["name"]
             };
 
             return t;
