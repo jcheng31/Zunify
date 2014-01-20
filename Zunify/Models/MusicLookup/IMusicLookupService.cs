@@ -8,6 +8,6 @@ namespace Zunify.Models.MusicLookup
 {
     public interface IMusicLookupService
     {
-        List<Track> FindTracks(String title, String artist, String album);
+        List<MusicTrack> FindTracks(String title, String artist, String album);
     }
 }

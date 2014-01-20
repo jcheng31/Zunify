@@ -8,7 +8,7 @@ namespace Zunify.Models.MusicLookup
 {
     public class SpotifySearchService : IMusicLookupService
     {
-        public List<Track> FindTracks(string title, string artist, string album)
+        public List<MusicTrack> FindTracks(string title, string artist, string album)
         {
             throw new NotImplementedException();
         }
