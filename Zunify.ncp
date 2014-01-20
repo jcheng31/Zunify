@@ -96,7 +96,7 @@
         <Location left="1417" top="1101" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
-        <Member type="Method">public static SpotifyTrack FromJsonFactory()</Member>
+        <Member type="Method">public static SpotifyTrack FromJsonFactory(JObject json)</Member>
         <Modifier>None</Modifier>
       </Entity>
     </Entities>
