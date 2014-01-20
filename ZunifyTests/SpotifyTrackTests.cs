@@ -50,5 +50,11 @@ namespace ZunifyTests
         {
             Assert.AreEqual("Iamundernodisguise", testTrack.Title);
         }
+
+        [TestMethod]
+        public void SpotifyTrackAlbumNameParse()
+        {
+            Assert.AreEqual("Alpinisms", testTrack.AlbumTitle);
+        }
     }
 }
