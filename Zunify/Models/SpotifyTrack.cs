@@ -11,7 +11,12 @@ namespace Zunify.Models
     {
         public static SpotifyTrack FromJsonFactory(JObject json)
         {
-            throw new NotImplementedException();
+            SpotifyTrack t = new SpotifyTrack
+            {
+                Title = (string) json["name"],
+            };
+
+            return t;
         }
     }
 }
