@@ -10,7 +10,7 @@ namespace Zunify.Models
     public class ZunePlaylist
     {
         public string Name { get; set; }
-        public List<Track> Tracks { get; set; }
+        public List<ZuneTrack> Tracks { get; set; }
         public int Count { get { return Tracks.Count; } }
 
         public static ZunePlaylist FromFileFactory(String filePath)
@@ -21,7 +21,7 @@ namespace Zunify.Models
             }
 
             ZunePlaylist p = new ZunePlaylist();
-            p.Tracks = new List<Track>();
+            p.Tracks = new List<ZuneTrack>();
 
             try
             {
@@ -36,7 +36,7 @@ namespace Zunify.Models
 
                 foreach (XElement trackElement in trackList.Elements())
                 {
-                    p.Tracks.Add(Track.FromXElementFactory(trackElement));
+                    p.Tracks.Add(ZuneTrack.FromXElementFactory(trackElement));
                 }
             }
             catch (XmlException)

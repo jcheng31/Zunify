@@ -16,13 +16,13 @@ namespace ZunifyTests
         private const string AlbumTitle = "Ceremonials (Deluxe Edition)";
 
         private XElement element;
-        private Track testTrack;
+        private ZuneTrack testTrack;
 
         [TestInitialize]
         public void Setup()
         {
             element = XElement.Parse(SampleTrackXml);
-            testTrack = Track.FromXElementFactory(element);
+            testTrack = ZuneTrack.FromXElementFactory(element);
         }
 
         [TestMethod]
@@ -30,7 +30,7 @@ namespace ZunifyTests
             "Null created a Track.")]
         public void NullThrowsException()
         {
-            Track.FromXElementFactory(null);
+            ZuneTrack.FromXElementFactory(null);
         }
 
         [TestMethod]
@@ -66,7 +66,7 @@ namespace ZunifyTests
         [TestMethod]
         public void TrackPathSetCorrectly()
         {
-            Assert.AreEqual(@"D:\Users\Jerome\My Music\Florence + the Machine\Ceremonials (Deluxe Edition)\07 No Light, No Light.mp3", testTrack.Path, "Track path not set correctly.");
+            Assert.AreEqual(@"D:\Users\Jerome\My Music\Florence + the Machine\Ceremonials (Deluxe Edition)\07 No Light, No Light.mp3", testTrack.Identifier, "Track path not set correctly.");
         }
 
         [TestMethod]
