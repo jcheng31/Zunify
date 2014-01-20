@@ -20,18 +20,12 @@
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
-        <Name>Track</Name>
+        <Name>ZuneTrack</Name>
         <Access>Public</Access>
         <Location left="1417" top="378" />
         <Size width="162" height="230" />
         <Collapsed>False</Collapsed>
-        <Member type="Constructor">public Track()</Member>
-        <Member type="Property">public String Title { get; set; }</Member>
-        <Member type="Property">public String AlbumTitle { get; set; }</Member>
-        <Member type="Property">public String AlbumArtist { get; set; }</Member>
-        <Member type="Property">public int Artist { get; set; }</Member>
-        <Member type="Property">public int Duration { get; set; }</Member>
-        <Member type="Property">public String Path { get; set; }</Member>
+        <Member type="Constructor">public ZuneTrack()</Member>
         <Member type="Method">public static Track FromXElementFactory(XElement element)</Member>
         <Member type="Method">public String ToFormattedString(String format)</Member>
         <Modifier>None</Modifier>
@@ -78,10 +72,32 @@
       <Entity type="Interface">
         <Name>IMusicLookupService</Name>
         <Access>Public</Access>
-        <Location left="689" top="1152" />
+        <Location left="727" top="1322" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
-        <Member type="Method">List&lt;Track&gt; FindTracks(String title, String artist, String album)</Member>
+        <Member type="Method">List&lt;MusicTrack&gt; FindTracks(String title, String artist, String album)</Member>
+      </Entity>
+      <Entity type="Class">
+        <Name>MusicTrack</Name>
+        <Access>Public</Access>
+        <Location left="1417" top="752" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Property">public String Title { get; set; }</Member>
+        <Member type="Property">public String AlbumTitle { get; set; }</Member>
+        <Member type="Property">public int Artist { get; set; }</Member>
+        <Member type="Property">public int Duration { get; set; }</Member>
+        <Member type="Property">public String Identifier { get; set; }</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SpotifyTrack</Name>
+        <Access>Public</Access>
+        <Location left="1417" top="1101" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public static SpotifyTrack FromJsonFactory()</Member>
+        <Modifier>None</Modifier>
       </Entity>
     </Entities>
     <Relationships>
@@ -109,6 +125,14 @@
       <Relationship type="Realization" first="4" second="5">
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="1" second="6">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="7" second="6">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
       </Relationship>
     </Relationships>
   </ProjectItem>

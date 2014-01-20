@@ -66,6 +66,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Models\MusicLookup\IMusicLookupService.cs" />
+    <Compile Include="Models\MusicLookup\SpotifySearchService.cs" />
+    <Compile Include="Models\MusicTrack.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Page Include="MainWindow.xaml">
@@ -83,7 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\PlaylistConverter.cs" />
-    <Compile Include="Models\Track.cs" />
+    <Compile Include="Models\ZuneTrack.cs" />
     <Compile Include="Models\ZunePlaylist.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
