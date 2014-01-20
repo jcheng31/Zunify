@@ -9,7 +9,7 @@ namespace Zunify.Models
 {
     public class SpotifyTrack : MusicTrack
     {
-        public SpotifyTrack FromJsonFactory(JObject json)
+        public static SpotifyTrack FromJsonFactory(JObject json)
         {
             throw new NotImplementedException();
         }
