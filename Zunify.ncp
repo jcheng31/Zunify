@@ -42,8 +42,7 @@
         <Location left="937" top="649" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
-        <Member type="Field">ZunePlaylist playlist</Member>
-        <Member type="Method">public static void ToTextFile(String filePath, String format)</Member>
+        <Member type="Method">public static void ToTextFile(ZunePlaylist playlist, String filePath, String format)</Member>
         <Member type="Constructor">public PlaylistConverter()</Member>
         <Modifier>None</Modifier>
       </Entity>
@@ -58,14 +57,11 @@
         <StartMultiplicity>1</StartMultiplicity>
         <EndMultiplicity>*</EndMultiplicity>
       </Relationship>
-      <Relationship type="Association" first="2" second="0">
-        <Label>has</Label>
+      <Relationship type="Dependency" first="2" second="0">
+        <Label>
+        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
-        <Direction>Unidirectional</Direction>
-        <AssociationType>Association</AssociationType>
-        <StartMultiplicity>1</StartMultiplicity>
-        <EndMultiplicity>1</EndMultiplicity>
       </Relationship>
     </Relationships>
   </ProjectItem>
