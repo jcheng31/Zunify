@@ -36,43 +36,43 @@ namespace ZunifyTests
           ""track-number"": ""1""
         }";
 
-        private SpotifyTrack testTrack;
+        private SpotifyTrack _testTrack;
 
         [TestInitialize]
         public void Setup()
         {
             JObject data = JObject.Parse(SampleTrackJson);
-            testTrack = SpotifyTrack.FromJsonFactory(data);
+            _testTrack = SpotifyTrack.FromJsonFactory(data);
         }
 
         [TestMethod]
         public void SpotifyTrackNameParse()
         {
-            Assert.AreEqual("Iamundernodisguise", testTrack.Title);
+            Assert.AreEqual("Iamundernodisguise", _testTrack.Title);
         }
 
         [TestMethod]
         public void SpotifyTrackAlbumNameParse()
         {
-            Assert.AreEqual("Alpinisms", testTrack.AlbumTitle);
+            Assert.AreEqual("Alpinisms", _testTrack.AlbumTitle);
         }
 
         [TestMethod]
         public void SpotifyTrackArtistNameParse()
         {
-            Assert.AreEqual("School Of Seven Bells", testTrack.Artist);
+            Assert.AreEqual("School Of Seven Bells", _testTrack.Artist);
         }
 
         [TestMethod]
         public void SpotifyTrackDurationParse()
         {
-            Assert.AreEqual(228, testTrack.Duration);
+            Assert.AreEqual(228, _testTrack.Duration);
         }
 
         [TestMethod]
         public void SpotifyTrackIdentifierParse()
         {
-            Assert.AreEqual("spotify:track:2aYaiTHCFd3eZkP1fseOx9", testTrack.Identifier);
+            Assert.AreEqual("spotify:track:2aYaiTHCFd3eZkP1fseOx9", _testTrack.Identifier);
         }
     }
 }
