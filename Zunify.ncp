@@ -7,7 +7,7 @@
       <Entity type="Class">
         <Name>ZunePlaylist</Name>
         <Access>Public</Access>
-        <Location left="937" top="275" />
+        <Location left="1000" top="378" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Constructor">private ZunePlaylist()</Member>
@@ -22,7 +22,7 @@
       <Entity type="Class">
         <Name>Track</Name>
         <Access>Public</Access>
-        <Location left="1354" top="275" />
+        <Location left="1417" top="378" />
         <Size width="162" height="230" />
         <Collapsed>False</Collapsed>
         <Member type="Constructor">public Track()</Member>
@@ -39,7 +39,7 @@
       <Entity type="Class">
         <Name>PlaylistConverter</Name>
         <Access>Public</Access>
-        <Location left="937" top="649" />
+        <Location left="1000" top="752" />
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Method">public static void ToTextFile(ZunePlaylist playlist, String filePath, String format)</Member>
@@ -49,7 +49,7 @@
       <Entity type="Class">
         <Name>MainViewModel</Name>
         <Access>Public</Access>
-        <Location left="615" top="605" />
+        <Location left="678" top="708" />
         <Size width="162" height="298" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private String _playlistPath</Member>
@@ -66,6 +66,22 @@
         <Member type="Method">private Void ExecuteLoadPlaylistFileCommand()</Member>
         <Member type="Method">private Void ExecuteSaveParsedTextCommand()</Member>
         <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SpotifySearchService</Name>
+        <Access>Public</Access>
+        <Location left="988" top="1322" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Interface">
+        <Name>IMusicLookupService</Name>
+        <Access>Public</Access>
+        <Location left="689" top="1152" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">List&lt;Track&gt; FindTrackDetails(String title, String artist, String album)</Member>
       </Entity>
     </Entities>
     <Relationships>
@@ -87,6 +103,10 @@
       <Relationship type="Dependency" first="3" second="2">
         <Label>
         </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="4" second="5">
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
       </Relationship>
