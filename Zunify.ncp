@@ -43,9 +43,8 @@
         <Size width="162" height="216" />
         <Collapsed>False</Collapsed>
         <Member type="Field">ZunePlaylist playlist</Member>
-        <Member type="Method">public static void ToTextFile(String filePath)</Member>
+        <Member type="Method">public static void ToTextFile(String filePath, String format)</Member>
         <Member type="Constructor">public PlaylistConverter()</Member>
-        <Member type="Method">public void ToM3U(String filePath)</Member>
         <Modifier>None</Modifier>
       </Entity>
     </Entities>
