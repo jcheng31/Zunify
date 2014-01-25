@@ -3,14 +3,79 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GalaSoft.MvvmLight;
 
 namespace Zunify.Models
 {
-    public class SongMatch
+    public class SongMatch : ObservableObject
     {
-        public ZuneTrack OriginalTrack { get; private set; }
-        public List<SpotifyTrack> Candidates { get; private set; }
-        public SpotifyTrack MatchedTrack { get; set; }
+        public const string OriginalTrackPropertyName = "OriginalTrack";
+        public const string CandidatesPropertyName = "Candidates";
+        public const string MatchedTrackPropertyName = "MatchedTrack";
+
+        private ZuneTrack _originalTrack;
+        private List<SpotifyTrack> _candidates;
+        private SpotifyTrack _matchedTrack;
+
+        public ZuneTrack OriginalTrack
+        {
+            get
+            {
+                return _originalTrack;
+            }
+
+            set
+            {
+                if (_originalTrack == value)
+                {
+                    return;
+                }
+
+                RaisePropertyChanging(OriginalTrackPropertyName);
+                _originalTrack = value;
+                RaisePropertyChanged(OriginalTrackPropertyName);
+            }
+        }
+
+        public List<SpotifyTrack> Candidates
+        {
+            get
+            {
+                return _candidates;
+            }
+
+            set
+            {
+                if (_candidates == value)
+                {
+                    return;
+                }
+
+                RaisePropertyChanging(CandidatesPropertyName);
+                _candidates = value;
+                RaisePropertyChanged(CandidatesPropertyName);
+            }
+        }
+
+        public SpotifyTrack MatchedTrack
+        {
+            get
+            {
+                return _matchedTrack;
+            }
+
+            set
+            {
+                if (_matchedTrack == value)
+                {
+                    return;
+                }
+
+                RaisePropertyChanging(MatchedTrackPropertyName);
+                _matchedTrack = value;
+                RaisePropertyChanged(MatchedTrackPropertyName);
+            }
+        }
 
         public SongMatch(ZuneTrack original, List<SpotifyTrack> candidates)
         {
