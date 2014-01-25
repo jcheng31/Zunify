@@ -1,0 +1,29 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:models="clr-namespace:Zunify.Models"
+	xmlns:views="clr-namespace:Zunify.Views"
+	mc:Ignorable="d"
+	x:Class="Zunify.MatchControl"
+	x:Name="UserControl"
+	d:DesignWidth="640" d:DesignHeight="45" Background="White" d:DataContext="{d:DesignInstance Type=models:SongMatch}">
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <views:TrackControl DataContext="{Binding OriginalTrack}"/>
+        
+        <ComboBox Grid.Column="1" Grid.RowSpan="2" ItemsSource="{Binding Candidates}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <views:TrackControl />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+    </Grid>
+</UserControl>

@@ -75,10 +75,12 @@
     <Compile Include="Models\SongMatch.cs" />
     <Compile Include="Models\SpotifyTrack.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
-    <Compile Include="ViewModel\MatcherViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="Views\MatchControl.xaml.cs">
       <DependentUpon>MatchControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TrackControl.xaml.cs">
+      <DependentUpon>TrackControl.xaml</DependentUpon>
     </Compile>
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -95,6 +97,10 @@
     <Page Include="Views\MatchControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TrackControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
