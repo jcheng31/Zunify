@@ -71,8 +71,10 @@
     <Compile Include="Models\MusicLookup\IMusicLookupService.cs" />
     <Compile Include="Models\MusicLookup\SpotifySearchService.cs" />
     <Compile Include="Models\MusicTrack.cs" />
+    <Compile Include="Models\SongMatch.cs" />
     <Compile Include="Models\SpotifyTrack.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\MatcherViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
