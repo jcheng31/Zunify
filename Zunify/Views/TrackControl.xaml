@@ -5,24 +5,19 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:models="clr-namespace:Zunify.Models"
              mc:Ignorable="d" 
-             d:DesignHeight="50" d:DesignWidth="300" d:DataContext="{d:DesignInstance Type=models:MusicTrack}">
-    <Grid>
+             d:DesignHeight="50" d:DesignWidth="300">
+    <Grid Margin="0,3" VerticalAlignment="Center">
         <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="Auto" />
-            </Grid.ColumnDefinitions>
 
-            <Label Grid.Column="0" Content="{Binding Title}" Padding="0,5" />
-            <Label Grid.Column="1" Content="-" />
-            <Label Grid.Column="2" Content="{Binding Artist}" Padding="0,5" />
-        </Grid>
+        <Label Grid.Row="0" Content="{Binding Title}" Padding="0,2" />
         
-        <Label Grid.Row="1" Grid.Column="0" Content="{Binding AlbumTitle}" Padding="0,5" />
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left">
+            <Label Content="{Binding Artist}" Padding="0,2" />
+            <Label Content="-" Margin="3,0" Padding="0,2" />
+            <Label Content="{Binding AlbumTitle}" FontStyle="Italic" Padding="0,2" />
+        </StackPanel>
     </Grid>
 </UserControl>
