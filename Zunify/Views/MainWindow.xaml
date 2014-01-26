@@ -1,11 +1,16 @@
 ﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:ViewModel="clr-namespace:Zunify.ViewModel" x:Class="Zunify.MainWindow"
-        Title="Zunify" Height="200" Width="500" ResizeMode="NoResize">
+        xmlns:ViewModel="clr-namespace:Zunify.ViewModel"
+        xmlns:views="clr-namespace:Zunify.Views"
+        x:Class="Zunify.MainWindow"
+        Title="Zunify" Height="420" Width="640" ResizeMode="NoResize">
     <Window.DataContext>
         <ViewModel:MainViewModel/>
     </Window.DataContext>
+    <Window.InputBindings>
+        <KeyBinding Modifiers="Control" Key="O" Command="{Binding LoadPlaylistFileCommand}" />
+    </Window.InputBindings>
     <Grid>
         <Grid.Resources>
             <Style TargetType="{x:Type Control}" x:Key="MainFieldLabels">
@@ -15,35 +20,53 @@
         </Grid.Resources>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="2*" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="4*" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
+        
+        <Menu Grid.Row="0">
+            <MenuItem Header="_File">
+                <MenuItem Header="_Open" InputGestureText="Ctrl+O" Command="{Binding LoadPlaylistFileCommand}" />
+            </MenuItem>
+        </Menu>
 
-        <Grid Grid.Row="0" Grid.ColumnSpan="2">
-            <Grid.RowDefinitions>
-                <RowDefinition />
-                <RowDefinition />
-            </Grid.RowDefinitions>
+        <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
             <Label Content="Selected Playlist:" Style="{StaticResource MainFieldLabels}"/>
-            <Label Grid.Row="0" Grid.Column="1" Content="{Binding PlaylistPath}" VerticalAlignment="Center" Margin="12" />
-
-            <Label Grid.Row="1" Grid.Column="0" Content="Track Output Format:" Style="{StaticResource MainFieldLabels}" />
-            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding OutputFormatString}" VerticalAlignment="Center" Margin="12" Padding="3" />
+            <Label Grid.Column="1" Content="{Binding PlaylistPath}" VerticalAlignment="Center" Margin="12" />
         </Grid>
 
-        <Button Grid.Row="1" Grid.Column="0" Command="{Binding LoadPlaylistFileCommand}" Margin="12">
-            <Label Content="Choose Playlist" />
-        </Button>
-        <Button Grid.Row="1" Grid.Column="1" Command="{Binding SaveParsedTextCommand}" Margin="12">
-            <Label Content="Parse and Save" />
-        </Button>
+        <ListBox Grid.Row="2" ItemsSource="{Binding Playlist.Tracks}" Margin="12">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <views:TrackControl />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            
+            <Grid Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="Track Output Format:" Style="{StaticResource MainFieldLabels}" Margin="12, 0, 0, 0" />
+                <TextBox Grid.Column="1" Text="{Binding OutputFormatString}" VerticalAlignment="Center" Margin="12" Padding="3" />
+            </Grid>
+
+            <Button Grid.Column="1" Command="{Binding SaveParsedTextCommand}" Margin="12" VerticalAlignment="Center">
+                <Label Content="Save" />
+            </Button>
+        </Grid>
     </Grid>
 </Window>
