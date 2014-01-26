@@ -11,7 +11,6 @@
             <RowDefinition />
             <RowDefinition />
         </Grid.RowDefinitions>
-        
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
@@ -19,11 +18,11 @@
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
 
-            <Label Grid.Column="0" Content="{Binding Title}" />
+            <Label Grid.Column="0" Content="{Binding Title}" Padding="0,5" />
             <Label Grid.Column="1" Content="-" />
-            <Label Grid.Column="2" Content="{Binding Artist}" />
+            <Label Grid.Column="2" Content="{Binding Artist}" Padding="0,5" />
         </Grid>
         
-        <Label Grid.Column="0" Grid.Row="1" Content="{Binding AlbumTitle}" />
+        <Label Grid.Row="1" Grid.Column="0" Content="{Binding AlbumTitle}" Padding="0,5" />
     </Grid>
 </UserControl>
