@@ -32,16 +32,16 @@
             </MenuItem>
         </Menu>
 
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" Margin="12,6,12,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
             <Label Content="Selected Playlist:" Style="{StaticResource MainFieldLabels}"/>
-            <Label Grid.Column="1" Content="{Binding PlaylistPath}" VerticalAlignment="Center" Margin="12" />
+            <Label Grid.Column="1" Content="{Binding PlaylistPath}" VerticalAlignment="Center" />
         </Grid>
 
-        <ListBox Grid.Row="2" ItemsSource="{Binding Playlist.Tracks}" Margin="12">
+        <ListBox Grid.Row="2" ItemsSource="{Binding Playlist.Tracks}" Margin="12,6,12,0">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <views:TrackControl />
@@ -49,7 +49,7 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <Grid Grid.Row="3">
+        <Grid Grid.Row="3" Margin="12">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
                 <ColumnDefinition Width="Auto"/>
@@ -60,11 +60,11 @@
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="0" Content="Track Output Format:" Style="{StaticResource MainFieldLabels}" Margin="12, 0, 0, 0" />
-                <TextBox Grid.Column="1" Text="{Binding OutputFormatString}" VerticalAlignment="Center" Margin="12" Padding="3" />
+                <Label Grid.Column="0" Content="Track Output Format:" Style="{StaticResource MainFieldLabels}" />
+                <TextBox Grid.Column="1" Text="{Binding OutputFormatString}" VerticalAlignment="Center" Margin="12,0" Padding="3" />
             </Grid>
 
-            <Button Grid.Column="1" Command="{Binding SaveParsedTextCommand}" IsEnabled="{Binding HasPlaylist}" Margin="12" VerticalAlignment="Center">
+            <Button Grid.Column="1" Command="{Binding SaveParsedTextCommand}" IsEnabled="{Binding HasPlaylist}" VerticalAlignment="Center">
                 <Label Content="Save" />
             </Button>
         </Grid>

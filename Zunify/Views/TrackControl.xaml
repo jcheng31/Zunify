@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:models="clr-namespace:Zunify.Models"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300" d:DataContext="{d:DesignInstance Type=models:MusicTrack}">
+             d:DesignHeight="50" d:DesignWidth="300" d:DataContext="{d:DesignInstance Type=models:MusicTrack}">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition />
