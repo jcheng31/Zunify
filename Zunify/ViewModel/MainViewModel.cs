@@ -22,7 +22,8 @@ namespace Zunify.ViewModel
     {
         public const String OutputFormatStringPropertyName = "OutputFormatString";
         public const String PlaylistPathPropertyName = "PlaylistPath";
-        public const string PlaylistPropertyName = "Playlist";
+        public const String PlaylistPropertyName = "Playlist";
+        public const String HasPlaylistPropertyName = "HasPlaylist";
 
         private String _playlistPath;
         private String _outputFormatString;
@@ -83,8 +84,10 @@ namespace Zunify.ViewModel
                 }
 
                 RaisePropertyChanging(PlaylistPropertyName);
+                RaisePropertyChanging(HasPlaylistPropertyName);
                 _playlist = value;
                 RaisePropertyChanged(PlaylistPropertyName);
+                RaisePropertyChanged(HasPlaylistPropertyName);
             }
         }
         
@@ -136,6 +139,11 @@ namespace Zunify.ViewModel
                 return  _saveParsedTextCommand
                     ?? ( _saveParsedTextCommand = new RelayCommand(ExecuteSaveParsedTextCommand));
             }
+        }
+
+        public bool HasPlaylist
+        {
+            get { return Playlist != null; }
         }
 
         private void ExecuteSaveParsedTextCommand()

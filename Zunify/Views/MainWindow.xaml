@@ -64,7 +64,7 @@
                 <TextBox Grid.Column="1" Text="{Binding OutputFormatString}" VerticalAlignment="Center" Margin="12" Padding="3" />
             </Grid>
 
-            <Button Grid.Column="1" Command="{Binding SaveParsedTextCommand}" Margin="12" VerticalAlignment="Center">
+            <Button Grid.Column="1" Command="{Binding SaveParsedTextCommand}" IsEnabled="{Binding HasPlaylist}" Margin="12" VerticalAlignment="Center">
                 <Label Content="Save" />
             </Button>
         </Grid>
