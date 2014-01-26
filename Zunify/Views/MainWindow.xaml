@@ -17,6 +17,10 @@
             <Style TargetType="{x:Type Control}" x:Key="MainFieldLabels">
                 <Setter Property="VerticalAlignment" Value="Center" />
             </Style>
+            <Style TargetType="Label" x:Key="SmallCapsTitle">
+                <Setter Property="FontWeight" Value="Bold" />
+                <Setter Property="FontSize" Value="14" />
+            </Style>
         </Grid.Resources>
 
         <Grid.RowDefinitions>
@@ -26,40 +30,41 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <Menu Grid.Row="0">
-            <MenuItem Header="FILE">
-                <MenuItem Header="_Open" InputGestureText="Ctrl+O" Command="{Binding LoadPlaylistFileCommand}" />
-            </MenuItem>
-        </Menu>
+        <Button Grid.Row="0" Command="{Binding LoadPlaylistFileCommand}" Padding="0" Margin="12,3">
+            <Label Content="LOAD PLAYLIST" />
+        </Button>
 
-        <Label Grid.Row="1" Content="{Binding PlaylistPath}" FontWeight="Bold" VerticalAlignment="Center" Margin="12,0" />
+        <StackPanel Grid.Row="1" Margin="12,0">
+            <Label Content="LOCATION" Style="{StaticResource SmallCapsTitle}" />
+            <Label Content="{Binding PlaylistPath}" FontWeight="Bold" VerticalAlignment="Center" />
+        </StackPanel>
 
-        <ListBox Grid.Row="2" ItemsSource="{Binding Playlist.Tracks}" Margin="12,6,12,0">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <views:TrackControl />
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+        <StackPanel Grid.Row="2" Margin="12,0">
+            <Label Content="TRACKS" Style="{StaticResource SmallCapsTitle}" />
+            <ListBox ItemsSource="{Binding Playlist.Tracks}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <views:TrackControl />
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
 
-        <Grid Grid.Row="3" Margin="12">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-
-            <Grid Grid.Column="0">
+        <StackPanel Grid.Row="3" Margin="12">
+            <Label Content="EXPORT AS TEXT" Style="{StaticResource SmallCapsTitle}" />
+            <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="0" Content="TRACK OUTPUT FORMAT:" Style="{StaticResource MainFieldLabels}" />
-                <TextBox Grid.Column="1" Text="{Binding OutputFormatString}" VerticalAlignment="Center" Margin="12,0" Padding="3" />
-            </Grid>
 
-            <Button Grid.Column="1" Command="{Binding SaveParsedTextCommand}" IsEnabled="{Binding HasPlaylist}" VerticalAlignment="Center" Padding="3">
-                <Label Content="SAVE" />
-            </Button>
-        </Grid>
+                <Label Grid.Column="0" Content="TRACK OUTPUT FORMAT:" Style="{StaticResource MainFieldLabels}" />
+                <TextBox Grid.Column="1" Text="{Binding OutputFormatString}" VerticalAlignment="Center" Margin="6,0" Padding="3" />
+                <Button Grid.Column="2" Command="{Binding SaveParsedTextCommand}" IsEnabled="{Binding HasPlaylist}" VerticalAlignment="Center" Padding="3">
+                    <Label Content="SAVE" />
+                </Button>
+            </Grid>
+        </StackPanel>
     </Grid>
 </Controls:MetroWindow>
