@@ -5,7 +5,7 @@
         xmlns:views="clr-namespace:Zunify.Views"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro" 
         x:Class="Zunify.MainWindow"
-        Title="Zunify" Height="420" Width="640" ResizeMode="NoResize">
+        Title="Zunify" Height="420" Width="480" MinHeight="420" MinWidth="480">
     <Window.DataContext>
         <ViewModel:MainViewModel/>
     </Window.DataContext>
