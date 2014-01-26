@@ -140,12 +140,10 @@ namespace Zunify.ViewModel
 
         private void ExecuteSaveParsedTextCommand()
         {
-            if (String.IsNullOrWhiteSpace(PlaylistPath))
+            if (Playlist == null)
             {
                 return;
             }
-
-            ZunePlaylist playlist = ZunePlaylist.FromFileFactory(PlaylistPath);
 
             SaveFileDialog dialog = new SaveFileDialog
             {
@@ -162,7 +160,7 @@ namespace Zunify.ViewModel
             String outputPath = dialog.FileName;
             String formatString = OutputFormatString;
 
-            PlaylistConverter.ToTextFile(playlist, outputPath, formatString);
+            PlaylistConverter.ToTextFile(Playlist, outputPath, formatString);
         }
     }
 }
