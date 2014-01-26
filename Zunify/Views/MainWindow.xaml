@@ -17,10 +17,6 @@
             <Style TargetType="{x:Type Control}" x:Key="MainFieldLabels">
                 <Setter Property="VerticalAlignment" Value="Center" />
             </Style>
-            <Style TargetType="Label" x:Key="SmallCapsTitle">
-                <Setter Property="FontWeight" Value="Bold" />
-                <Setter Property="FontSize" Value="14" />
-            </Style>
         </Grid.Resources>
 
         <Grid.RowDefinitions>
