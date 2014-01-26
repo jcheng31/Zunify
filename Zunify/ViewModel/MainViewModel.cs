@@ -22,9 +22,11 @@ namespace Zunify.ViewModel
     {
         public const String OutputFormatStringPropertyName = "OutputFormatString";
         public const String PlaylistPathPropertyName = "PlaylistPath";
+        public const string PlaylistPropertyName = "Playlist";
 
         private String _playlistPath;
         private String _outputFormatString;
+        private ZunePlaylist _playlist;
 
         public String PlaylistPath
         {
@@ -65,6 +67,26 @@ namespace Zunify.ViewModel
                 RaisePropertyChanged(OutputFormatStringPropertyName);
             }
         }
+
+        public ZunePlaylist Playlist
+        {
+            get
+            {
+                return _playlist;
+            }
+
+            set
+            {
+                if (_playlist == value)
+                {
+                    return;
+                }
+
+                RaisePropertyChanging(PlaylistPropertyName);
+                _playlist = value;
+                RaisePropertyChanged(PlaylistPropertyName);
+            }
+        }
         
         public MainViewModel()
         {
@@ -103,6 +125,7 @@ namespace Zunify.ViewModel
             }
 
             PlaylistPath = dialog.FileName;
+            Playlist = ZunePlaylist.FromFileFactory(PlaylistPath);
         }
 
         private RelayCommand _saveParsedTextCommand;
