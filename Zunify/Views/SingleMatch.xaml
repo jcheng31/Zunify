@@ -1,0 +1,50 @@
+﻿<controls:MetroWindow x:Class="Zunify.Views.SingleMatch"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:views="clr-namespace:Zunify.Views"
+        Title="Single Match" Height="300" Width="450">
+    <Grid Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Content="TITLE" Style="{StaticResource SmallCapsTitle}" />
+            <Label Grid.Row="0" Grid.Column="1" Content="{Binding OriginalTrack.Title}" />
+
+            <Label Grid.Row="1" Grid.Column="0" Content="ARTIST" Style="{StaticResource SmallCapsTitle}" />
+            <Label Grid.Row="1" Grid.Column="1" Content="{Binding OriginalTrack.Artist}" />
+
+            <Label Grid.Row="2" Grid.Column="0" Content="ALBUM" Style="{StaticResource SmallCapsTitle}" />
+            <Label Grid.Row="2" Grid.Column="1" Content="{Binding OriginalTrack.AlbumTitle}" />
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Label Content="MATCHES" Style="{StaticResource SmallCapsTitle}" />
+            <ListBox ItemsSource="{Binding Candidates}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <views:TrackControl />
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+    </Grid>
+</controls:MetroWindow>
