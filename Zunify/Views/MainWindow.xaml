@@ -12,7 +12,7 @@
     <Window.InputBindings>
         <KeyBinding Modifiers="Control" Key="O" Command="{Binding LoadPlaylistFileCommand}" />
     </Window.InputBindings>
-    <Grid>
+    <Grid Margin="12">
         <Grid.Resources>
             <Style TargetType="{x:Type Control}" x:Key="MainFieldLabels">
                 <Setter Property="VerticalAlignment" Value="Center" />
@@ -26,45 +26,42 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="4*" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <Button Grid.Row="0" Command="{Binding LoadPlaylistFileCommand}" Padding="0" Margin="12,3">
+        <Button Grid.Row="0" Command="{Binding LoadPlaylistFileCommand}" Padding="0" Margin="4,0">
             <Label Content="LOAD PLAYLIST" />
         </Button>
 
-        <StackPanel Grid.Row="1" Margin="12,0">
-            <Label Content="LOCATION" Style="{StaticResource SmallCapsTitle}" />
-            <Label Content="{Binding PlaylistPath}" FontWeight="Bold" VerticalAlignment="Center" />
-        </StackPanel>
+        <Label Grid.Row="1" Content="LOCATION" Style="{StaticResource SmallCapsTitle}" />
+        <Label Grid.Row="2" Content="{Binding PlaylistPath}" FontWeight="Bold" VerticalAlignment="Center" />
 
-        <StackPanel Grid.Row="2" Margin="12,0">
-            <Label Content="TRACKS" Style="{StaticResource SmallCapsTitle}" />
-            <ListBox ItemsSource="{Binding Playlist.Tracks}">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <views:TrackControl />
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-        </StackPanel>
+            <Label Grid.Row="3" Content="TRACKS" Style="{StaticResource SmallCapsTitle}" />
+        <ListBox Grid.Row="4" ItemsSource="{Binding Playlist.Tracks}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <views:TrackControl />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
 
-        <StackPanel Grid.Row="3" Margin="12">
-            <Label Content="EXPORT AS TEXT" Style="{StaticResource SmallCapsTitle}" />
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="Auto" />
-                </Grid.ColumnDefinitions>
+            <Label Grid.Row="5"  Content="EXPORT AS TEXT" Style="{StaticResource SmallCapsTitle}" />
+        <Grid Grid.Row="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
 
-                <Label Grid.Column="0" Content="TRACK OUTPUT FORMAT:" Style="{StaticResource MainFieldLabels}" />
-                <TextBox Grid.Column="1" Text="{Binding OutputFormatString}" VerticalAlignment="Center" Margin="6,0" Padding="3" />
-                <Button Grid.Column="2" Command="{Binding SaveParsedTextCommand}" IsEnabled="{Binding HasPlaylist}" VerticalAlignment="Center" Padding="3">
-                    <Label Content="SAVE" />
-                </Button>
-            </Grid>
-        </StackPanel>
+            <Label Grid.Column="0" Content="TRACK OUTPUT FORMAT:" Style="{StaticResource MainFieldLabels}" />
+            <TextBox Grid.Column="1" Text="{Binding OutputFormatString}" VerticalAlignment="Center" Margin="6,0" Padding="3" />
+            <Button Grid.Column="2" Command="{Binding SaveParsedTextCommand}" IsEnabled="{Binding HasPlaylist}" VerticalAlignment="Center" Padding="3">
+                <Label Content="SAVE" />
+            </Button>
+        </Grid>
     </Grid>
 </Controls:MetroWindow>
