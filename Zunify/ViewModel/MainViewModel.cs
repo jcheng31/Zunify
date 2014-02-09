@@ -3,6 +3,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using Microsoft.Win32;
 using Zunify.Models;
+using Zunify.Views;
 
 namespace Zunify.ViewModel
 {
@@ -24,10 +25,12 @@ namespace Zunify.ViewModel
         public const String PlaylistPathPropertyName = "PlaylistPath";
         public const String PlaylistPropertyName = "Playlist";
         public const String HasPlaylistPropertyName = "HasPlaylist";
+        public const String SelectedSongPropertyName = "SelectedSong";
 
         private String _playlistPath;
         private String _outputFormatString;
         private ZunePlaylist _playlist;
+        private ZuneTrack _selectedSong;
 
         public String PlaylistPath
         {
@@ -90,7 +93,32 @@ namespace Zunify.ViewModel
                 RaisePropertyChanged(HasPlaylistPropertyName);
             }
         }
-        
+
+        public ZuneTrack SelectedSong
+        {
+            get
+            {
+                return _selectedSong;
+            }
+
+            set
+            {
+                if (_selectedSong == value)
+                {
+                    return;
+                }
+
+                RaisePropertyChanging(SelectedSongPropertyName);
+                _selectedSong = value;
+                RaisePropertyChanged(SelectedSongPropertyName);
+            }
+        }
+
+        public bool HasPlaylist
+        {
+            get { return Playlist != null; }
+        }
+
         public MainViewModel()
         {
             ////if (IsInDesignMode)
@@ -141,11 +169,6 @@ namespace Zunify.ViewModel
             }
         }
 
-        public bool HasPlaylist
-        {
-            get { return Playlist != null; }
-        }
-
         private void ExecuteSaveParsedTextCommand()
         {
             if (Playlist == null)
@@ -169,6 +192,20 @@ namespace Zunify.ViewModel
             String formatString = OutputFormatString;
 
             PlaylistConverter.ToTextFile(Playlist, outputPath, formatString);
+        }
+
+        private RelayCommand _matchDoubleClicked;
+        public RelayCommand MatchDoubleClicked
+        {
+            get { return _matchDoubleClicked ?? (_matchDoubleClicked = new RelayCommand(ExecuteLoadMatchCommand)); }
+        }
+
+        private async void ExecuteLoadMatchCommand()
+        {
+            SongMatch match = await SongMatch.FromZuneTrackFactory(SelectedSong);
+            
+            SingleMatch matchWindow = new SingleMatch {DataContext = new SingleMatchViewModel(match)};
+            matchWindow.Show();
         }
     }
 }

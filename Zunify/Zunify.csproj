@@ -78,6 +78,7 @@
     <Compile Include="Models\SongMatch.cs" />
     <Compile Include="Models\SpotifyTrack.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\SingleMatchViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="Views\MatchControl.xaml.cs">
       <DependentUpon>MatchControl.xaml</DependentUpon>

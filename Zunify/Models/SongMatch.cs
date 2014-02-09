@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
+using Zunify.Models.MusicLookup;
 
 namespace Zunify.Models
 {
@@ -81,6 +82,14 @@ namespace Zunify.Models
         {
             OriginalTrack = original;
             Candidates = candidates;
+        }
+
+        public static async Task<SongMatch> FromZuneTrackFactory(ZuneTrack originalTrack)
+        {
+            IMusicLookupService lookupService = new SpotifySearchService();
+            List<MusicTrack> tracks = await lookupService.FindTracksAsync(originalTrack.Title, originalTrack.Artist, originalTrack.AlbumTitle);
+
+            return new SongMatch(originalTrack, tracks.Cast<SpotifyTrack>().ToList());
         }
 
     }
