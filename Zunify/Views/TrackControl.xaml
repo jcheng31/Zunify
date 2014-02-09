@@ -6,14 +6,20 @@
              xmlns:models="clr-namespace:Zunify.Models"
              mc:Ignorable="d" 
              d:DesignHeight="50" d:DesignWidth="300">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    </UserControl.Resources>
     <Grid Margin="0,3" VerticalAlignment="Center">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <Label Grid.Row="0" Content="{Binding Title}" Padding="0,2" />
-        
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Label Content="{Binding Title}" Padding="0,2" />
+            <Label Content="[Explicit]" Margin="6,0" Padding="0,2" Visibility="{Binding IsExplicit, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue=Collapsed}" ></Label>
+        </StackPanel>
+
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left">
             <Label Content="{Binding Artist}" Padding="0,2" />
             <Label Content="-" Margin="3,0" Padding="0,2" />

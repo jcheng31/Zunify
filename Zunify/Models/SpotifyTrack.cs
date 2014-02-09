@@ -9,6 +9,8 @@ namespace Zunify.Models
 {
     public class SpotifyTrack : MusicTrack
     {
+        public Boolean IsExplicit { get; set; }
+
         public static SpotifyTrack FromJsonFactory(JObject json)
         {
             SpotifyTrack t = new SpotifyTrack
@@ -17,7 +19,8 @@ namespace Zunify.Models
                 AlbumTitle = (string)json["album"]["name"],
                 Artist = (string) json["artists"].First()["name"],
                 Duration = (int) json["length"],
-                Identifier = (string) json["href"]
+                Identifier = (string) json["href"],
+                IsExplicit = json["explicit"] != null
             };
 
             return t;
