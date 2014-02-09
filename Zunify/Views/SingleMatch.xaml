@@ -37,8 +37,8 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
 
-            <Label Content="MATCHES" Style="{StaticResource SmallCapsTitle}" />
-            <ListBox ItemsSource="{Binding Candidates}">
+            <Label Content="SPOTIFY MATCHES" Style="{StaticResource SmallCapsTitle}" />
+            <ListBox Grid.Row="1" ItemsSource="{Binding Candidates}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <views:TrackControl />
