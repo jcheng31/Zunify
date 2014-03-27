@@ -206,7 +206,7 @@ namespace Zunify.ViewModel
             SongMatch match = await SongMatch.FromZuneTrackFactory(SelectedSong);
             
             SingleMatch matchWindow = new SingleMatch {DataContext = new SingleMatchViewModel(match)};
-            matchWindow.Show();
+            matchWindow.ShowDialog();
         }
     }
 }
