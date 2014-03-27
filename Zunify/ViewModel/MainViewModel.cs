@@ -2,6 +2,7 @@ using System;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using Microsoft.Win32;
+using Zunify.Exporters;
 using Zunify.Models;
 using Zunify.Views;
 
