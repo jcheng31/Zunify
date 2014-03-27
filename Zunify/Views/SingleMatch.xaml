@@ -38,7 +38,8 @@
             </Grid.RowDefinitions>
 
             <Label Content="SPOTIFY MATCHES" Style="{StaticResource SmallCapsTitle}" />
-            <ListBox Grid.Row="1" ItemsSource="{Binding Candidates}">
+            <ListBox Grid.Row="1" ItemsSource="{Binding Candidates}"
+                     SelectedItem="{Binding Match}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <views:TrackControl />

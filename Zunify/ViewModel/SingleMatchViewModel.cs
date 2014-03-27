@@ -17,6 +17,7 @@ namespace Zunify.ViewModel
 
         public const string OriginalTrackPropertyName = "OriginalTrack";
         public const string CandidatesPropertyName = "Candidates";
+        public const string MatchPropertyName = "Match";
 
         public ZuneTrack OriginalTrack
         {
@@ -55,6 +56,21 @@ namespace Zunify.ViewModel
                 RaisePropertyChanging(CandidatesPropertyName);
                 _match.Candidates = value;
                 RaisePropertyChanged(CandidatesPropertyName);
+            }
+        }
+
+        public SpotifyTrack Match
+        {
+            get
+            {
+                return _match.MatchedTrack;
+            }
+
+            set
+            {
+                RaisePropertyChanging(MatchPropertyName);
+                _match.MatchedTrack = value;
+                RaisePropertyChanged(MatchPropertyName);
             }
         }
 
