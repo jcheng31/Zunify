@@ -12,7 +12,8 @@
     <Grid Margin="12">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0">
@@ -36,15 +37,9 @@
             <Label Grid.Row="2" Grid.Column="1" Content="{Binding OriginalTrack.AlbumTitle}" />
         </Grid>
 
-        <Grid Grid.Row="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
-
+        <StackPanel Grid.Row="1">
             <Label Content="MATCHED TRACK" Style="{StaticResource SmallCapsTitle}" />
-            <ComboBox Grid.Row="1" ItemsSource="{Binding Candidates}"
-                     SelectedItem="{Binding Match}">
+            <ComboBox ItemsSource="{Binding Candidates}" SelectedItem="{Binding Match}">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <ComboBoxItem>
@@ -53,6 +48,11 @@
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
-        </Grid>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2">
+            <Label Content="SPOTIFY ID" Style="{StaticResource SmallCapsTitle}" />
+            <TextBox Text="{Binding SpotifyId, Mode=OneWay}" IsReadOnly="True" />
+        </StackPanel>
     </Grid>
 </controls:MetroWindow>

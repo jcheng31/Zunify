@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Windows.Documents;
 using GalaSoft.MvvmLight;
 using Zunify.Models;
@@ -18,6 +19,7 @@ namespace Zunify.ViewModel
         public const string OriginalTrackPropertyName = "OriginalTrack";
         public const string CandidatesPropertyName = "Candidates";
         public const string MatchPropertyName = "Match";
+        public const string SpotifyIdName = "SpotifyId";
 
         public ZuneTrack OriginalTrack
         {
@@ -69,8 +71,18 @@ namespace Zunify.ViewModel
             set
             {
                 RaisePropertyChanging(MatchPropertyName);
+                RaisePropertyChanging(SpotifyIdName);
                 _match.MatchedTrack = value;
                 RaisePropertyChanged(MatchPropertyName);
+                RaisePropertyChanged(SpotifyIdName);
+            }
+        }
+
+        public String SpotifyId
+        {
+            get
+            {
+                return Match != null? Match.Identifier : "";
             }
         }
 
