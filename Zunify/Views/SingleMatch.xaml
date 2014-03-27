@@ -3,7 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
         xmlns:views="clr-namespace:Zunify.Views"
-        Title="Single Match" MinHeight="300" MinWidth="450" Height="300" Width="450">
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:behaviours="http://metro.mahapps.com/winfx/xaml/shared"
+        Title="Single Match" MinHeight="300" MinWidth="450" Height="300" Width="450" WindowStartupLocation="CenterOwner" ShowInTaskbar="False" ResizeMode="NoResize">
+    <i:Interaction.Behaviors>
+        <behaviours:BorderlessWindowBehavior AllowsTransparency="False" EnableDWMDropShadow="True" />
+    </i:Interaction.Behaviors>
     <Grid Margin="12">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
