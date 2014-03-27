@@ -6,6 +6,7 @@
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:command="http://www.galasoft.ch/mvvmlight"
+        xmlns:behaviours="http://metro.mahapps.com/winfx/xaml/shared"
         x:Class="Zunify.MainWindow"
         Title="Zunify" Height="420" Width="480" MinHeight="420" MinWidth="480">
     <Window.DataContext>
@@ -14,6 +15,9 @@
     <Window.InputBindings>
         <KeyBinding Modifiers="Control" Key="O" Command="{Binding LoadPlaylistFileCommand}" />
     </Window.InputBindings>
+    <i:Interaction.Behaviors>
+        <behaviours:BorderlessWindowBehavior EnableDWMDropShadow="True" AllowsTransparency="False" />
+    </i:Interaction.Behaviors>
     <Grid Margin="12">
         <Grid.Resources>
             <Style TargetType="{x:Type Control}" x:Key="MainFieldLabels">
