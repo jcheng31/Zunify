@@ -82,6 +82,11 @@ namespace Zunify.Models
         {
             OriginalTrack = original;
             Candidates = candidates;
+
+            if (candidates.Count > 0)
+            {
+                MatchedTrack = candidates[0];
+            }
         }
 
         public static async Task<SongMatch> FromZuneTrackFactory(ZuneTrack originalTrack)
