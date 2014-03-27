@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using Zunify.Models;
 
-namespace Zunify.Models.MusicLookup
+namespace Zunify.MusicLookup
 {
     public interface IMusicLookupService
     {

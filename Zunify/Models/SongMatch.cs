@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GalaSoft.MvvmLight;
-using Zunify.Models.MusicLookup;
+using Zunify.MusicLookup;
 
 namespace Zunify.Models
 {
