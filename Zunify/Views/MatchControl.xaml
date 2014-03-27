@@ -18,7 +18,8 @@
 
         <views:TrackControl DataContext="{Binding OriginalTrack}"/>
         
-        <ComboBox Grid.Column="1" Grid.RowSpan="2" ItemsSource="{Binding Candidates}">
+        <ComboBox Grid.Column="1" Grid.RowSpan="2" ItemsSource="{Binding Candidates}"
+                  SelectedItem="{Binding MatchedTrack}">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <views:TrackControl />
