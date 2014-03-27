@@ -34,18 +34,18 @@
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
-                <RowDefinition />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
-            <Label Content="SPOTIFY MATCHES" Style="{StaticResource SmallCapsTitle}" />
-            <ListBox Grid.Row="1" ItemsSource="{Binding Candidates}"
+            <Label Content="MATCHED TRACK" Style="{StaticResource SmallCapsTitle}" />
+            <ComboBox Grid.Row="1" ItemsSource="{Binding Candidates}"
                      SelectedItem="{Binding Match}">
-                <ListBox.ItemTemplate>
+                <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <views:TrackControl />
                     </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
         </Grid>
     </Grid>
 </controls:MetroWindow>

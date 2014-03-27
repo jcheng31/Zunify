@@ -75,8 +75,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Models\MusicLookup\IMusicLookupService.cs" />
-    <Compile Include="Models\MusicLookup\SpotifySearchService.cs" />
+    <Compile Include="MusicLookup\IMusicLookupService.cs" />
+    <Compile Include="MusicLookup\SpotifySearchService.cs" />
     <Compile Include="Models\MusicTrack.cs" />
     <Compile Include="Models\SongMatch.cs" />
     <Compile Include="Models\SpotifyTrack.cs" />
@@ -122,7 +122,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\PlaylistConverter.cs" />
+    <Compile Include="Exporters\PlaylistConverter.cs" />
     <Compile Include="Models\ZuneTrack.cs" />
     <Compile Include="Models\ZunePlaylist.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
