@@ -1,15 +1,23 @@
 Zunify
 ======
 
-![](./screenshot.png)
+![](./main.png)
 
-A tool to parse Zune playlists (.zpl) and export them to a more human-readable format. That's what it does now, at least - the ultimate goal here is to allow them to be imported into Spotify.
+A tool to parse Zune playlists (.zpl) and export them to other formats: text listings of songs, or Spotify IDs that can be copy-pasted into the desktop client.
 
-Right now, it converts Zune playlists to text listings of all the songs within. These can be specified using a custom string, with the following format specifiers:
+## Text Export
+Entire playlists can be converted to plain text listings of all the songs within. These can be specified using a custom string, with the following format specifiers:
 
 	$Title - Track title
 	$Artist - Track artist
 	$AlbumTitle - Album name
 	$AlbumArtist - Album artist
 
-For instance, `$Title - $Artist`. (At the moment, strings like `$Title, $AlbumTitle, $AlbumArtist` don't work.)
+For instance, `$Title - $Artist`. (Strings without spaces like `$Title, $AlbumTitle, $AlbumArtist` don't work for now.)
+
+## Spotify IDs
+You can also match individual songs to corresponding tracks on the Spotify service. Double-clicking a song will bring up this window:
+
+![](./singleMatch.png)
+
+Just copy-paste the text from the `SPOTIFY ID` box into the desktop client to import the track.
