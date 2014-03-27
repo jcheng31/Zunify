@@ -47,7 +47,9 @@
                      SelectedItem="{Binding Match}">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
-                        <views:TrackControl />
+                        <ComboBoxItem>
+                            <views:TrackControl />
+                        </ComboBoxItem>
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
