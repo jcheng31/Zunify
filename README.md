@@ -25,5 +25,4 @@ Just copy-paste the text from the `SPOTIFY ID` box into the desktop client to im
 Alternative matches can be chosen from the `MATCHED TRACK` drop-down.
 
 ## TODO
-* Better custom text export: allowing strings without spaces.
 * Matching an entire playlist with tracks on Spotify and exporting the result.
