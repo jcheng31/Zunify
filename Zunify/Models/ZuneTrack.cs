@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Xml.Linq;
 
 namespace Zunify.Models
@@ -17,12 +18,12 @@ namespace Zunify.Models
 
             ZuneTrack t = new ZuneTrack
             {
-                Title = (string) element.Attribute("trackTitle"),
-                AlbumTitle =  (string) element.Attribute("albumTitle"),
-                Artist = (string) element.Attribute("trackArtist"),
-                AlbumArtist = (string) element.Attribute("albumArtist"),
-                Duration = (int) element.Attribute("duration"),
-                Identifier = (string) element.Attribute("src")
+                Title = (string)element.Attribute("trackTitle"),
+                AlbumTitle = (string)element.Attribute("albumTitle"),
+                Artist = (string)element.Attribute("trackArtist"),
+                AlbumArtist = (string)element.Attribute("albumArtist"),
+                Duration = (int)element.Attribute("duration"),
+                Identifier = (string)element.Attribute("src")
             };
 
             return t;
@@ -36,34 +37,28 @@ namespace Zunify.Models
                 return String.Empty;
             }
 
-            StringBuilder formatBuilder = new StringBuilder();
 
-            string[] formatTokens = format.Split(' ');
-            foreach (string token in formatTokens)
+            var formatPattern = new Regex(@"\$\w+?\b");
+
+            MatchEvaluator replacer = match =>
             {
-                switch (token)
+                switch (match.Value)
                 {
                     case "$Title":
-                        formatBuilder.Append(Title);
-                        break;
+                        return Title;
                     case "$Artist":
-                        formatBuilder.Append(Artist);
-                        break;
+                        return Artist;
                     case "$AlbumTitle":
-                        formatBuilder.Append(AlbumTitle);
-                        break;
+                        return AlbumTitle;
                     case "$AlbumArtist":
-                        formatBuilder.Append(AlbumArtist);
-                        break;
+                        return AlbumArtist;
                     default:
-                        formatBuilder.Append(token);
-                        break;
+                        return match.Value;
                 }
+            };
 
-                formatBuilder.Append(' ');
-            }
-
-            return formatBuilder.ToString().Trim();
+            String formatted = formatPattern.Replace(format, replacer);
+            return formatted;
         }
     }
 }
