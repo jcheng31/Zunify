@@ -28,13 +28,13 @@
             </Grid.RowDefinitions>
 
             <Label Grid.Row="0" Content="TITLE" Style="{StaticResource SmallCapsTitle}" />
-            <Label Grid.Row="0" Grid.Column="1" Content="{Binding OriginalTrack.Title}" />
+            <Label Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Content="{Binding OriginalTrack.Title}" />
 
             <Label Grid.Row="1" Grid.Column="0" Content="ARTIST" Style="{StaticResource SmallCapsTitle}" />
-            <Label Grid.Row="1" Grid.Column="1" Content="{Binding OriginalTrack.Artist}" />
+            <Label Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Content="{Binding OriginalTrack.Artist}" />
 
             <Label Grid.Row="2" Grid.Column="0" Content="ALBUM" Style="{StaticResource SmallCapsTitle}" />
-            <Label Grid.Row="2" Grid.Column="1" Content="{Binding OriginalTrack.AlbumTitle}" />
+            <Label Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Content="{Binding OriginalTrack.AlbumTitle}" />
         </Grid>
 
         <StackPanel Grid.Row="1">
