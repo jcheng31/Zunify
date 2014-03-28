@@ -75,6 +75,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Resources\Keys.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Keys.resx</DependentUpon>
+    </Compile>
+    <Compile Include="MusicLookup\EchoNestSpotifySearchService.cs" />
     <Compile Include="MusicLookup\IMusicLookupService.cs" />
     <Compile Include="MusicLookup\SpotifySearchService.cs" />
     <Compile Include="Models\MusicTrack.cs" />
@@ -138,6 +144,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Resources\Keys.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Keys.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
