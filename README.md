@@ -13,7 +13,7 @@ Entire playlists can be converted to plain text listings of all the songs within
 	$AlbumTitle - Album name
 	$AlbumArtist - Album artist
 
-For instance, `$Title - $Artist`. (Strings without spaces like `$Title, $AlbumTitle, $AlbumArtist` don't work for now.)
+For instance, `$Title - $Artist`, or `$Title, $AlbumTitle, $AlbumArtist`.
 
 ## Spotify IDs
 You can also match individual songs to corresponding tracks on the Spotify service. Double-clicking a song will bring up this window:
