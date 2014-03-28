@@ -39,7 +39,7 @@
 
         <StackPanel Grid.Row="1">
             <Label Content="MATCHED TRACK" Style="{StaticResource SmallCapsTitle}" />
-            <ComboBox ItemsSource="{Binding Candidates}" SelectedItem="{Binding Match}">
+            <ComboBox Margin="4,0" ItemsSource="{Binding Candidates}" SelectedItem="{Binding Match}">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
                         <ComboBoxItem>
@@ -52,7 +52,7 @@
 
         <StackPanel Grid.Row="2">
             <Label Content="SPOTIFY ID" Style="{StaticResource SmallCapsTitle}" />
-            <TextBox Text="{Binding SpotifyId, Mode=OneWay}" IsReadOnly="True" />
+            <TextBox Margin="4,0" Text="{Binding SpotifyId, Mode=OneWay}" IsReadOnly="True" />
         </StackPanel>
     </Grid>
 </controls:MetroWindow>
