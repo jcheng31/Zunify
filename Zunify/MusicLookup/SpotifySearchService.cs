@@ -10,13 +10,17 @@ namespace Zunify.MusicLookup
     public class SpotifySearchService : IMusicLookupService
     {
         private const String SpotifyBaseAddress = "http://ws.spotify.com/search/1/";
-        private const String SpotifyTrackSearch = "track.json?q=";
+        private const String SpotifyTrackSearchFormat = "track.json?q={0}";
 
+        private WebClient _client;
+        public SpotifySearchService()
+        {
+            _client = new WebClient {BaseAddress = SpotifyBaseAddress};
+        }
         public async Task<List<MusicTrack>> FindTracksAsync(string title, string artist, string album)
         {
-            WebClient client = new WebClient();
-            client.BaseAddress = SpotifyBaseAddress;
-            String rawJson = await client.DownloadStringTaskAsync(SpotifyTrackSearch + title);
+            var trackSearchUrl = String.Format(SpotifyTrackSearchFormat, title);
+            String rawJson = await _client.DownloadStringTaskAsync(trackSearchUrl);
 
             JObject result = JObject.Parse(rawJson);
 
