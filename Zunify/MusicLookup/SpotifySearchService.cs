@@ -20,11 +20,11 @@ namespace Zunify.MusicLookup
         public async Task<List<MusicTrack>> FindTracksAsync(string title, string artist, string album)
         {
             var trackSearchUrl = String.Format(SpotifyTrackSearchFormat, title);
-            String rawJson = await _client.DownloadStringTaskAsync(trackSearchUrl);
+            var rawJson = await _client.DownloadStringTaskAsync(trackSearchUrl);
 
-            JObject result = JObject.Parse(rawJson);
+            var result = JObject.Parse(rawJson);
 
-            List<MusicTrack> tracks = new List<MusicTrack>();
+            var tracks = new List<MusicTrack>();
             foreach (JToken token in (JArray)result["tracks"])
             {
                 var track = token as JObject;
