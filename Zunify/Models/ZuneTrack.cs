@@ -23,7 +23,8 @@ namespace Zunify.Models
                 Artist = (string)element.Attribute("trackArtist"),
                 AlbumArtist = (string)element.Attribute("albumArtist"),
                 Duration = (int)element.Attribute("duration"),
-                Identifier = (string)element.Attribute("src")
+                Identifier = (string)element.Attribute("src"),
+                IsExplicit = false // We have no way of determining this from playlist info.
             };
 
             return t;

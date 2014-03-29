@@ -13,5 +13,6 @@ namespace Zunify.Models
         public String Artist { get; set; }
         public String Identifier { get; set; }
         public int Duration { get; set; }
+        public Boolean IsExplicit { get; set; }
     }
 }

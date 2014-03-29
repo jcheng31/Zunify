@@ -9,8 +9,6 @@ namespace Zunify.Models
 {
     public class SpotifyTrack : MusicTrack
     {
-        public Boolean IsExplicit { get; set; }
-
         public static SpotifyTrack FromJsonFactory(JObject json)
         {
             SpotifyTrack t = new SpotifyTrack
