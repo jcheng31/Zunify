@@ -16,14 +16,14 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0" Orientation="Horizontal">
-            <Label Content="{Binding Title}" FontWeight="Bold" Padding="0,2" />
-            <Label Content="[Explicit]" FontWeight="Bold" Margin="6,0" Padding="0,2" Visibility="{Binding IsExplicit, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue=Collapsed}" ></Label>
+            <Label Content="{Binding Title}" FontWeight="Bold" Padding="0" />
+            <Label Content="[Explicit]" FontWeight="Bold" Margin="3,0" Padding="0" Visibility="{Binding IsExplicit, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue=Collapsed}" ></Label>
         </StackPanel>
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left">
-            <Label Content="{Binding Artist}" Padding="0,2" />
-            <Label Content="-" Margin="3,0" Padding="0,2" />
-            <Label Content="{Binding AlbumTitle}" FontStyle="Italic" Padding="0,2" />
+            <Label Content="{Binding Artist}" Padding="0" />
+            <Label Content="-" Margin="3,0" Padding="0" />
+            <Label Content="{Binding AlbumTitle}" FontStyle="Italic" Padding="0" />
         </StackPanel>
     </Grid>
 </UserControl>
